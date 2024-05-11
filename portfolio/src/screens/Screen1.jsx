@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const Screen1 = () => {
+const Screen1 = ({ darkMode, setDarkMode }) => {
   return (
     <section
       id="screen1"
-      className=" min-h-screen flex flex-col justify-center items-center"
+      // className="min-h-screen flex flex-col justify-center items-center"
+      className={`${
+        darkMode ? "bg-black" : "bg-white"
+      } min-h-screen flex flex-col justify-center items-center`}
     >
       <div>
         <motion.h1
