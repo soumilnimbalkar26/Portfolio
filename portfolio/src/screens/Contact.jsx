@@ -15,7 +15,6 @@ const Contact = () => {
       alert(JSON?.stringify(values, null, 2));
     },
   });
-  console.log(formik?.values, "{/}");
 
   return (
     <>

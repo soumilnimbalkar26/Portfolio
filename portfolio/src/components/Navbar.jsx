@@ -7,11 +7,14 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightMode from "@mui/icons-material/LightMode";
 import DarkMode from "@mui/icons-material/DarkMode";
+// import { useDispatch } from "react-redux";
 // import { a } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ darkMode, setDarkMode }) => {
   const [IsOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
+
+  // const dispatch = useDispatch();
 
   const toggleMenu = () => {
     if (!IsOpen) {
@@ -24,30 +27,36 @@ const Navbar = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  console.log(darkMode, "{/}");
 
   return (
     <>
       <div className="relative">
-        <nav className="bg-black flex flex-row justify-between md:justify-around h-[100px] w-full fixed z-10">
-          <motion.div
-            className="flex flex-row items-center"
-            whileHover={{ rotateY: 360, scale: 1.5 }}
-          >
-            <a href="/">
-              <img className="h-[50px] w-[50px]" src={Logo} alt="logo" />
-            </a>
-            <a href="/">
-              <h1 className="text-white font-poppins font-extrabold">
+        {/* <nav className="bg-black flex flex-row justify-between md:justify-around h-[100px] w-full fixed z-10"> */}
+        <nav
+          className={` ${
+            darkMode ? "bg-black" : "bg-white"
+          } flex flex-row justify-between md:justify-around h-[100px] w-full fixed z-10`}
+        >
+          <motion.div className="flex flex-row items-center">
+            <motion.a whileHover={{ rotateY: 360, scale: 1.5 }} href="/">
+              <h1
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                }  font-poppins font-extrabold`}
+              >
+                {/* <h1 className="text-white font-poppins font-extrabold"> */}
                 PORTFOLIO
               </h1>
-            </a>
+            </motion.a>
           </motion.div>
 
           <ul className="md:flex md:items-center md:gap-20 hidden">
             <a href="/">
               <motion.li
-                className="text-white font-poppins font-semibold"
+                // className="text-white font-poppins font-semibold"
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                }  font-poppins font-semibold`}
                 whileHover={{ scale: 1.5 }}
               >
                 Home
@@ -55,7 +64,10 @@ const Navbar = () => {
             </a>
             <a href="#about">
               <motion.li
-                className="text-white font-poppins font-semibold"
+                // className="text-white font-poppins font-semibold"
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                }  font-poppins font-semibold`}
                 whileHover={{ scale: 1.5 }}
               >
                 About
@@ -63,7 +75,10 @@ const Navbar = () => {
             </a>
             <a href="/">
               <motion.li
-                className="text-white font-poppins font-semibold"
+                // className="text-white font-poppins font-semibold"
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                }  font-poppins font-semibold`}
                 whileHover={{ scale: 1.5 }}
               >
                 Work
@@ -71,7 +86,10 @@ const Navbar = () => {
             </a>
             <a href="/">
               <motion.li
-                className="text-white font-poppins font-semibold"
+                // className="text-white font-poppins font-semibold"
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                }  font-poppins font-semibold`}
                 whileHover={{ scale: 1.5 }}
               >
                 Tools
@@ -79,7 +97,10 @@ const Navbar = () => {
             </a>
             <a href="#contact">
               <motion.li
-                className="text-white font-poppins font-semibold"
+                // className="text-white font-poppins font-semibold"
+                className={`${
+                  darkMode ? "text-white" : "text-black"
+                }  font-poppins font-semibold`}
                 whileHover={{ scale: 1.5 }}
               >
                 Contact

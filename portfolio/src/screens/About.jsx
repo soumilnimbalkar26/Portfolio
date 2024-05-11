@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const About = () => {
+const About = ({ darkMode, setDarkMode }) => {
   return (
     <>
       <section
