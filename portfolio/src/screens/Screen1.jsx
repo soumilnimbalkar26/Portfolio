@@ -23,7 +23,7 @@ const Screen1 = () => {
           }}
           viewport={{ once: true }}
         >
-          WEB DEVELOPER
+          FRONTEND DEVELOPER
         </motion.h1>
         <motion.h1
           className=" my-4 text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[28px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] leading-[30px] sm:leading-[100px] md:leading-[144px]"
