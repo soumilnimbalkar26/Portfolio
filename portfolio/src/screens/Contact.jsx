@@ -1,7 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useFormik } from "formik";
 
 const Contact = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      phone_number: "",
+      your_message: "",
+    },
+    onSubmit: (values) => {
+      alert(JSON?.stringify(values, null, 2));
+    },
+  });
+  console.log(formik?.values, "{/}");
+
   return (
     <>
       <section
@@ -24,7 +39,7 @@ const Contact = () => {
           GET IN TOUCH
         </motion.h2>
         <motion.div
-          className=" p-5 mx-5 flex felx-col justify-center gap-2 items-center rounded-lg bg-gray-950"
+          className=""
           initial={{ opacity: 0, y: 20 }}
           whileInView={{
             opacity: 1,
@@ -38,9 +53,10 @@ const Contact = () => {
         >
           <form
             action="#"
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center w-[700px] bg-gray-950 p-[26px] rounded-[12px]"
+            onSubmit={formik?.handleSubmit}
           >
-            <div>
+            <div className="w-full mb-2">
               <label
                 htmlFor="name"
                 className="block py-2 text-[14px] font-bold font-poppins text-white"
@@ -50,13 +66,16 @@ const Contact = () => {
               <input
                 type="text"
                 id="Name"
+                name="name"
                 className="border border-gray-800 text-gray-50 text-sm rounded-lg block w-full p-2.5 bg-transparent"
                 placeholder="Name"
                 required
+                value={formik?.values?.name}
+                onChange={formik.handleChange}
               />
             </div>
 
-            <div>
+            <div className="w-full mb-2">
               <label
                 htmlFor="email"
                 className="block py-2 text-[14px] font-bold font-poppins text-white"
@@ -69,10 +88,13 @@ const Contact = () => {
                 className="border border-gray-800 text-gray-50 text-sm rounded-lg block w-full p-2.5 bg-transparent"
                 placeholder="Email"
                 required
+                name="email"
+                value={formik?.values?.email}
+                onChange={formik.handleChange}
               />
             </div>
 
-            <div>
+            <div className="w-full mb-2">
               <label
                 htmlFor="subject"
                 className="block py-2 text-[14px] font-bold font-poppins text-white"
@@ -85,10 +107,13 @@ const Contact = () => {
                 className="border border-gray-800 text-gray-50 text-sm rounded-lg block w-full p-2.5 bg-transparent"
                 placeholder="Subject"
                 required
+                name="subject"
+                value={formik?.values?.subject}
+                onChange={formik.handleChange}
               />
             </div>
 
-            <div>
+            <div className="w-full mb-2">
               <label
                 htmlFor="number"
                 className="block py-2 text-[14px] font-bold font-poppins text-white"
@@ -96,15 +121,18 @@ const Contact = () => {
                 Phone Number
               </label>
               <input
-                type="text"
+                type="number"
                 id="number"
                 className="border border-gray-800 text-gray-50 text-sm rounded-lg block w-full p-2.5 bg-transparent"
                 placeholder="Mobile no."
                 required
+                name="phone_number"
+                value={formik?.values?.phone_number}
+                onChange={formik.handleChange}
               />
             </div>
 
-            <div className="sm:col-span-2">
+            <div className="sm:col-span-2 w-full mb-2">
               <label
                 htmlFor="message"
                 className="block py-2 text-[14px] font-bold font-poppins text-white"
@@ -116,6 +144,9 @@ const Contact = () => {
                 rows="4"
                 className="border border-gray-800 text-gray-50 text-sm rounded-lg block w-full p-2.5 bg-transparent"
                 placeholder="Leave a comment..."
+                name="your_message"
+                value={formik?.values?.your_message}
+                onChange={formik.handleChange}
               ></textarea>
             </div>
             <button
