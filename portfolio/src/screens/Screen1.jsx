@@ -5,39 +5,56 @@ import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Screen1 = () => {
   return (
-    <section className="h-screen flex flex-col justify-center items-center overflow-hidden">
-      <div className="flex flex-col justify-center items-center">
+    <section
+      id="screen1"
+      className=" min-h-screen flex flex-col justify-center items-center"
+    >
+      <div>
         <motion.h1
-          className="text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[30px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] py-4 leading-[30px] sm:leading-[100px] md:leading-[144px]"
+          className=" my-4 text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[28px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] leading-[30px] sm:leading-[100px] md:leading-[144px]"
           initial={{ opacity: 0, x: "20vw" }} // initial position outside the viewport
-          animate={{
+          whileInView={{
             opacity: 1,
             x: "0vw",
             transition: {
-              duration: 5,
+              duration: 2,
               type: "spring",
             },
           }}
+          viewport={{ once: true }}
         >
           WEB DEVELOPER
         </motion.h1>
         <motion.h1
-          className="text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[30px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] py-4 leading-[30px] sm:leading-[100px] md:leading-[144px]"
+          className=" my-4 text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[28px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] leading-[30px] sm:leading-[100px] md:leading-[144px]"
           initial={{ opacity: 0, x: "-20vw" }} // initial position outside the viewport
-          animate={{
+          whileInView={{
             opacity: 1,
             x: "0vw",
             transition: {
-              duration: 5,
+              duration: 2,
               type: "spring",
             },
           }}
+          viewport={{ once: true }}
         >
           SOUMIL NIMBALKAR
         </motion.h1>
       </div>
 
-      <div className="flex flex-row w-[500px] justify-center mt-5 animate-fade-up animate-duration-[1000ms] gap-[10px] md:gap-[30px]">
+      <motion.div
+        className="flex mt-2 flex-row justify-center items-center gap-[20px] md:gap-[40px]"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 2,
+            type: "spring",
+          },
+        }}
+        viewport={{ once: true }}
+      >
         <Link
           to="https://www.linkedin.com/in/soumil-nimbalkar-348a64192/"
           target="_blank"
@@ -77,7 +94,7 @@ const Screen1 = () => {
             <FaInstagram className="text-white h-[25px] w-[25px]" />
           </motion.div>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };
