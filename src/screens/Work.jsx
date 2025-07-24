@@ -1,13 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const About = () => {
+const Work = () => {
   return (
     <>
       <section
-        id="about"
+        id="work"
         className="min-h-screen flex flex-col justify-center items-center my-5"
       >
         <div className="flex justify-center items-center mb-6">
@@ -24,7 +22,7 @@ const About = () => {
             }}
             viewport={{ once: true }}
           >
-            ABOUT ME
+            WORK EXPERIENCE
           </motion.h1>
         </div>
       </section>
@@ -32,4 +30,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Work;
