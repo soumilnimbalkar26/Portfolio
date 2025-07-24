@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import Icons from "../reusable/icons/Icons";
 
-const Screen1 = ({ darkMode, setDarkMode }) => {
+const Screen1 = ({}) => {
   return (
     <section
       id="screen1"
       // className="min-h-screen flex flex-col justify-center items-center"
-      className={`${
-        darkMode ? "bg-black" : "bg-white"
-      } min-h-screen flex flex-col justify-center items-center`}
+      className={
+        "bg-black min-h-screen flex flex-col justify-center items-center"
+      }
     >
       <div>
         <motion.h1
@@ -58,45 +59,22 @@ const Screen1 = ({ darkMode, setDarkMode }) => {
         }}
         viewport={{ once: true }}
       >
-        <Link
-          to="https://www.linkedin.com/in/soumil-nimbalkar-348a64192/"
-          target="_blank"
-        >
-          <motion.div
-            className="h-[50px] w-[50px] border-white border-[2px] flex items-center justify-center rounded-full"
-            whileHover={{ scale: 2, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaLinkedin className="text-white h-[25px] w-[25px]" />
-          </motion.div>
-        </Link>
-        <Link to="https://github.com/soumilnimbalkar26" target="_blank">
-          <motion.div
-            className="h-[50px] w-[50px] border-white border-[2px] flex items-center justify-center rounded-full"
-            whileHover={{ scale: 2, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaGithub className="text-white h-[25px] w-[25px]" />
-          </motion.div>
-        </Link>
-        <Link to="https://twitter.com/Soumil23606288" target="_blank">
-          <motion.div
-            className="h-[50px] w-[50px] border-white border-[2px] flex items-center justify-center rounded-full"
-            whileHover={{ scale: 2, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaTwitter className="text-white h-[25px] w-[25px]" />
-          </motion.div>
-        </Link>
-        <Link to="https://www.instagram.com/soumilnimbalkar/" target="_blank">
-          <motion.div
-            className="h-[50px] w-[50px] border-white border-[2px] flex items-center justify-center rounded-full"
-            whileHover={{ scale: 2, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaInstagram className="text-white h-[25px] w-[25px]" />
-          </motion.div>
-        </Link>
+        <Icons
+          icon={<FaLinkedin className="text-white text-[20px]" />}
+          url="https://www.linkedin.com/in/soumilnimbalkar"
+        />
+        <Icons
+          icon={<FaGithub className="text-white text-[20px]" />}
+          url="https://github.com/soumilnimbalkar26"
+        />
+        <Icons
+          icon={<FaTwitter className="text-white text-[20px]" />}
+          url="https://twitter.com/Soumil23606288"
+        />
+        <Icons
+          icon={<FaInstagram className="text-white text-[20px]" />}
+          url="https://www.instagram.com/soumilnimbalkar/"
+        />
       </motion.div>
     </section>
   );
