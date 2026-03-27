@@ -1,81 +1,58 @@
+import portrait from "../assets/portrait.png";
 import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
-import Icons from "../reusable/icons/Icons";
+
+import { useSelector } from "react-redux";
 
 const Screen1 = ({}) => {
+  const { darkMode } = useSelector((state) => state.darkMode);
+
   return (
     <section
-      id="screen1"
-      // className="min-h-screen flex flex-col justify-center items-center"
-      className={
-        "bg-black min-h-screen flex flex-col justify-center items-center"
-      }
+      className={`flex items-center justify-center min-h-screen ${darkMode ? 'bg-dark-background text-dark-text' : 'bg-light-background text-light-text'}`}
     >
-      <div>
-        <motion.h1
-          className=" my-4 text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[28px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] leading-[30px] sm:leading-[100px] md:leading-[144px]"
-          initial={{ opacity: 0, x: "20vw" }} // initial position outside the viewport
-          whileInView={{
-            opacity: 1,
-            x: "0vw",
-            transition: {
-              duration: 2,
-              type: "spring",
-            },
-          }}
-          viewport={{ once: true }}
-        >
-          FRONTEND DEVELOPER
-        </motion.h1>
-        <motion.h1
-          className=" my-4 text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-900 font-poppins font-normal text-[28px] cursor-default sm:text-[60px] md:text-[80px] lg:text-[96px] leading-[30px] sm:leading-[100px] md:leading-[144px]"
-          initial={{ opacity: 0, x: "-20vw" }} // initial position outside the viewport
-          whileInView={{
-            opacity: 1,
-            x: "0vw",
-            transition: {
-              duration: 2,
-              type: "spring",
-            },
-          }}
-          viewport={{ once: true }}
-        >
-          SOUMIL NIMBALKAR
-        </motion.h1>
-      </div>
+      <div className="flex flex-col items-center justify-center h-full w-full">
+        <div className="flex items-center w-[1036px] gap-[48px] relative">
+          <div>
+            <div className="mb-[32px]">
+              <div
+                className={`text-[80px] leading-[75px] font-bold ${darkMode ? 'text-dark-text' : 'text-light-text'}`}
+              >
+                Software
+              </div>
+              <div
+                className="text-[80px] leading-[75px] font-bold text-light-primary dark:text-dark-primary"
+              >
+                Developer.
+              </div>
+            </div>
 
-      <motion.div
-        className="flex mt-2 flex-row justify-center items-center gap-[20px] md:gap-[40px]"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 2,
-            type: "spring",
-          },
-        }}
-        viewport={{ once: true }}
-      >
-        <Icons
-          icon={<FaLinkedin className="text-white text-[20px]" />}
-          url="https://www.linkedin.com/in/soumilnimbalkar"
-        />
-        <Icons
-          icon={<FaGithub className="text-white text-[20px]" />}
-          url="https://github.com/soumilnimbalkar26"
-        />
-        <Icons
-          icon={<FaTwitter className="text-white text-[20px]" />}
-          url="https://twitter.com/Soumil23606288"
-        />
-        <Icons
-          icon={<FaInstagram className="text-white text-[20px]" />}
-          url="https://www.instagram.com/soumilnimbalkar/"
-        />
-      </motion.div>
+            <div className="text-justify opacity-80">
+              I’m a software developer specializing in React.js and Next.js,
+              building responsive, scalable, and high-performance user
+              interfaces. I focus on creating maintainable architectures,
+              dynamic dashboards, and reusable components, with strong state
+              management using Redux and effective frontend–backend
+              collaboration.
+            </div>
+          </div>
+
+          <img
+            src={portrait}
+            alt="Portrait"
+            className="h-[512px] w-[512px] object-contain rounded-[12px]"
+          />
+
+          {/* Absolut Section */}
+          <div
+            className={`absolute rounded-[12px] p-[16px] bottom-[-20px] right-[320px] shadow-md ${darkMode ? 'bg-gray-800' : 'bg-gray-200'}`}
+          >
+            <div className="text-[30px] font-bold text-light-primary dark:text-dark-primary">
+              2+
+            </div>
+            <div className="opacity-80">YEARS OF EXPERIENCE</div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
