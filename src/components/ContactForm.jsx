@@ -81,13 +81,13 @@ const ContactForm = ({ darkMode }) => {
 
   return (
     <motion.div
-      className="w-full max-w-[700px]"
+      className="w-full"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{
         opacity: 1,
         y: 0,
         transition: {
-          duration: 1,
+          duration: 0.8,
           type: "spring",
         },
       }}
@@ -95,211 +95,162 @@ const ContactForm = ({ darkMode }) => {
     >
       <form
         action="#"
-        className={`flex flex-col justify-center items-center w-full ${
-          darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"
-        } p-[26px] rounded-[12px] border shadow-lg transition-colors duration-300`}
+        className="flex flex-col w-full gap-5 transition-colors duration-300"
         onSubmit={formik?.handleSubmit}
       >
-        <div className="w-full mb-2">
-          <label
-            htmlFor="name"
-            className={`block py-2 text-[14px] font-bold  ${
-              darkMode ? "text-dark-text" : "text-light-text"
-            }`}
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            id="Name"
-            name="name"
-            className={`border ${
-              darkMode
-                ? "border-gray-700 text-gray-100 bg-gray-900 focus:border-light-primary"
-                : "border-gray-300 text-gray-900 bg-gray-50 focus:border-light-primary"
-            } text-sm rounded-lg block w-full p-2.5 transition-colors duration-300`}
-            placeholder="Name"
-            required
-            value={formik?.values?.name}
-            onChange={formik.handleChange}
-          />
-        </div>
-
-        <div className="w-full mb-2">
-          <label
-            htmlFor="email"
-            className={`block py-2 text-[14px] font-bold  ${
-              darkMode ? "text-dark-text" : "text-light-text"
-            }`}
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className={`border ${
-              darkMode
-                ? "border-gray-700 text-gray-100 bg-gray-900 focus:border-light-primary"
-                : "border-gray-300 text-gray-900 bg-gray-50 focus:border-light-primary"
-            } text-sm rounded-lg block w-full p-2.5 transition-colors duration-300`}
-            placeholder="Email"
-            required
-            name="email"
-            value={formik?.values?.email}
-            onChange={formik.handleChange}
-          />
-        </div>
-
-        <div className="w-full mb-2 flex gap-4">
-          <div className="flex-1">
+        <div className="flex flex-col sm:flex-row gap-5 w-full">
+          <div className="flex-1 relative">
+            <input
+              type="text"
+              id="Name"
+              name="name"
+              className={`peer border ${
+                darkMode
+                  ? "border-slate-600 text-white bg-slate-800/50 focus:border-cyan-400 focus:ring-cyan-400/20"
+                  : "border-gray-200 text-gray-900 bg-white/50 focus:border-blue-500 focus:ring-blue-500/20"
+              } text-sm rounded-xl block w-full p-4 pt-6 transition-all duration-300 focus:outline-none focus:ring-4 backdrop-blur-sm`}
+              placeholder=" "
+              required
+              value={formik?.values?.name}
+              onChange={formik.handleChange}
+            />
             <label
-              htmlFor="subject"
-              className={`block py-2 text-[14px] font-bold  ${
-                darkMode ? "text-dark-text" : "text-light-text"
-              }`}
+              htmlFor="Name"
+              className={`absolute text-sm duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 ${
+                darkMode ? "text-slate-400 peer-focus:text-cyan-400" : "text-gray-500 peer-focus:text-blue-600"
+              } font-medium`}
             >
-              Subject
+              Name
             </label>
+          </div>
+
+          <div className="flex-1 relative">
+            <input
+              type="email"
+              id="email"
+              className={`peer border ${
+                darkMode
+                  ? "border-slate-600 text-white bg-slate-800/50 focus:border-cyan-400 focus:ring-cyan-400/20"
+                  : "border-gray-200 text-gray-900 bg-white/50 focus:border-blue-500 focus:ring-blue-500/20"
+              } text-sm rounded-xl block w-full p-4 pt-6 transition-all duration-300 focus:outline-none focus:ring-4 backdrop-blur-sm`}
+              placeholder=" "
+              required
+              name="email"
+              value={formik?.values?.email}
+              onChange={formik.handleChange}
+            />
+            <label
+              htmlFor="email"
+              className={`absolute text-sm duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 ${
+                darkMode ? "text-slate-400 peer-focus:text-cyan-400" : "text-gray-500 peer-focus:text-blue-600"
+              } font-medium`}
+            >
+              Email Address
+            </label>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-5 w-full">
+          <div className="flex-1 relative">
             <input
               type="text"
               id="subject"
-              className={`border ${
+              className={`peer border ${
                 darkMode
-                  ? "border-gray-700 text-gray-100 bg-gray-900 focus:border-light-primary"
-                  : "border-gray-300 text-gray-900 bg-gray-50 focus:border-light-primary"
-              } text-sm rounded-lg block w-full p-2.5 transition-colors duration-300`}
-              placeholder="Subject"
+                  ? "border-slate-600 text-white bg-slate-800/50 focus:border-cyan-400 focus:ring-cyan-400/20"
+                  : "border-gray-200 text-gray-900 bg-white/50 focus:border-blue-500 focus:ring-blue-500/20"
+              } text-sm rounded-xl block w-full p-4 pt-6 transition-all duration-300 focus:outline-none focus:ring-4 backdrop-blur-sm`}
+              placeholder=" "
               required
               name="subject"
               value={formik?.values?.subject}
               onChange={formik.handleChange}
             />
-          </div>
-          <div className="flex-1">
             <label
-              htmlFor="number"
-              className={`block py-2 text-[14px] font-bold  ${
-                darkMode ? "text-dark-text" : "text-light-text"
-              }`}
+              htmlFor="subject"
+              className={`absolute text-sm duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 ${
+                darkMode ? "text-slate-400 peer-focus:text-cyan-400" : "text-gray-500 peer-focus:text-blue-600"
+              } font-medium`}
             >
-              Phone Number
+              Subject
             </label>
+          </div>
+          <div className="flex-1 relative">
             <input
               type="number"
               id="number"
-              className={`border ${
+              className={`peer border ${
                 darkMode
-                  ? "border-gray-700 text-gray-100 bg-gray-900 focus:border-light-primary"
-                  : "border-gray-300 text-gray-900 bg-gray-50 focus:border-light-primary"
-              } text-sm rounded-lg block w-full p-2.5 transition-colors duration-300`}
-              placeholder="Mobile no."
+                  ? "border-slate-600 text-white bg-slate-800/50 focus:border-cyan-400 focus:ring-cyan-400/20"
+                  : "border-gray-200 text-gray-900 bg-white/50 focus:border-blue-500 focus:ring-blue-500/20"
+              } text-sm rounded-xl block w-full p-4 pt-6 transition-all duration-300 focus:outline-none focus:ring-4 backdrop-blur-sm`}
+              placeholder=" "
               required
               name="phone_number"
               value={formik?.values?.phone_number}
               onChange={formik.handleChange}
             />
+            <label
+              htmlFor="number"
+              className={`absolute text-sm duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 ${
+                darkMode ? "text-slate-400 peer-focus:text-cyan-400" : "text-gray-500 peer-focus:text-blue-600"
+              } font-medium`}
+            >
+              Phone Number
+            </label>
           </div>
         </div>
 
-        {/* <div className="w-full mb-2">
-          <label
-            className={`block py-2 text-[14px] font-bold ${
-              darkMode ? "text-dark-text" : "text-light-text"
-            }`}
-          >
-            Attach JD (PDF or DOC)
-          </label>
-          <div className="flex items-center justify-center w-full">
-            <label
-              className={`flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer transition-colors duration-300 ${
-                darkMode
-                  ? "border-gray-600 bg-gray-900 hover:bg-gray-800"
-                  : "border-gray-300 bg-gray-50 hover:bg-gray-100"
-              }`}
-            >
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg
-                  className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 16"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                  />
-                </svg>
-                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 font-medium text-center">
-                  {fileName ? (
-                    <span className="text-light-primary font-bold">{fileName}</span>
-                  ) : (
-                    <>
-                      <span className="font-semibold">Click to upload</span> or drag and drop
-                    </>
-                  )}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  PDF, DOC or DOCX (MAX. 50KB)
-                </p>
-              </div>
-              <input
-                type="file"
-                className="hidden"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-              />
-            </label>
-          </div>
-        </div> */}
+        {/* <div className="w-full mb-2"> ... */}
 
-        <div className="sm:col-span-2 w-full mb-2">
-          <label
-            htmlFor="message"
-            className={`block py-2 text-[14px] font-bold  ${
-              darkMode ? "text-dark-text" : "text-light-text"
-            }`}
-          >
-            Your message
-          </label>
+        <div className="w-full relative">
           <textarea
             id="message"
             rows="4"
-            className={`border ${
+            className={`peer border ${
               darkMode
-                ? "border-gray-700 text-gray-100 bg-gray-900 focus:border-light-primary"
-                : "border-gray-300 text-gray-900 bg-gray-50 focus:border-light-primary"
-            } text-sm rounded-lg block w-full p-2.5 transition-colors duration-300`}
-            placeholder="Leave a comment..."
+                ? "border-slate-600 text-white bg-slate-800/50 focus:border-cyan-400 focus:ring-cyan-400/20"
+                : "border-gray-200 text-gray-900 bg-white/50 focus:border-blue-500 focus:ring-blue-500/20"
+            } text-sm rounded-xl block w-full p-4 pt-6 transition-all duration-300 focus:outline-none focus:ring-4 backdrop-blur-sm`}
+            placeholder=" "
             name="your_message"
             value={formik?.values?.your_message}
             onChange={formik.handleChange}
           ></textarea>
+          <label
+            htmlFor="message"
+            className={`absolute text-sm duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 ${
+              darkMode ? "text-slate-400 peer-focus:text-cyan-400" : "text-gray-500 peer-focus:text-blue-600"
+            } font-medium`}
+          >
+            Your message
+          </label>
         </div>
 
         {submitStatus === "success" && (
-          <div className="w-full p-3 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-950 dark:text-green-300 font-bold">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full p-4 mt-2 text-sm text-green-700 bg-green-100/90 rounded-xl border border-green-200 dark:bg-emerald-900/30 dark:border-emerald-800/50 dark:text-emerald-300 font-bold backdrop-blur-sm tracking-wide text-center shadow-lg">
             Email sent successfully! I'll get back to you soon.
-          </div>
+          </motion.div>
         )}
 
         {submitStatus === "error" && (
-          <div className="w-full p-3 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-950 dark:text-red-300 font-bold">
-            Failed to send email. Please check your attachment size and try again.
-          </div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full p-4 mt-2 text-sm text-red-700 bg-red-100/90 rounded-xl border border-red-200 dark:bg-rose-900/30 dark:border-rose-800/50 dark:text-rose-300 font-bold backdrop-blur-sm tracking-wide text-center shadow-lg">
+            Failed to send email. Please check your attachments or try again later.
+          </motion.div>
         )}
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`py-3 px-5 mt-5 text-sm font-bold text-center w-full transition-all duration-300 ${
-            isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
-          } text-white bg-light-primary rounded-lg shadow-md`}
+          className={`py-4 px-8 mt-4 text-base font-bold text-center w-full transition-all duration-300 tracking-wide uppercase ${
+            isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:scale-[1.02] active:scale-[0.98]"
+          } rounded-xl shadow-lg border ${
+            darkMode
+              ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-transparent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+              : "bg-gradient-to-r from-blue-600 to-cyan-600 text-white border-transparent hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+          }`}
         >
-          {isSubmitting ? "Sending..." : "Submit"}
+          {isSubmitting ? "Sending details..." : "Send Message"}
         </button>
       </form>
     </motion.div>
