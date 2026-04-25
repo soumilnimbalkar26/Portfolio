@@ -15,14 +15,14 @@ export default {
       },
       colors: {
         light: {
-          background: '#f0f0f0',
-          text: '#0f0f0f',
-          primary: '#137FEC'
+          background: '#f8fafc',
+          text: '#0f172a',
+          primary: '#2563eb'
         },
         dark: {
-          background: '#0f0f0f',
-          text: '#f0f0f0',
-          primary: '#137FEC'
+          background: '#0f172a',
+          text: '#f1f5f9',
+          primary: '#0ea5e9'
         }
       }
     },
