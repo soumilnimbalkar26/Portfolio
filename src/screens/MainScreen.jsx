@@ -4,6 +4,7 @@ import Work from "./Work";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import Projects from "./Projects";
+import Resume from "./Resume";
 
 const MainScreen = () => {
   return (
@@ -20,6 +21,9 @@ const MainScreen = () => {
         </div>
         <div id="projects">
           <Projects />
+        </div>
+        <div id="resume">
+          <Resume />
         </div>
         <div id="contact">
           <Contact />
