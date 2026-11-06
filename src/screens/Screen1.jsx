@@ -57,11 +57,10 @@ const Screen1 = ({}) => {
             transition={{ delay: 0.5 }}
             className={`text-justify md:text-base leading-relaxed ${darkMode ? "text-slate-300" : "text-gray-600"}`}
           >
-            I’m a frontend developer with 2+ years of experience building
-            fast, responsive interfaces with React.js and Next.js. I focus on
-            maintainable architecture, reusable components, dynamic
-            dashboards, and Redux state management, with a practical
-            foundation in Node.js and React Native.
+            I’m a Frontend Developer with 2+ years of experience crafting fast, responsive interfaces in React.js and Next.js. Skilled in Redux
+            state management, reusable component design, and building dashboards and dynamic data tables. Comfortable
+            debugging, optimizing performance, and working closely with backend teams. Experienced in React Native through a
+            freelance mobile app project, with a foundation in Node.js.
           </motion.div>
         </div>
 
