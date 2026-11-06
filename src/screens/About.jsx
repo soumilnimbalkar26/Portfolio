@@ -29,15 +29,12 @@ const About = () => {
           </motion.h1>
         </div>
         <div className={`py-4 mx-2 font-normal cursor-default text-[16px] sm:text-[20px] md:text-[24px] max-w-[1000px] text-justify opacity-80 ${darkMode ? 'text-dark-text' : 'text-light-text'}`}>
-          Software Developer with 2 years of experience specializing in React.js
-          and Next.js. Strong at building responsive, scalable, and maintainable
-          user interfaces, with solid expertise in state management using Redux.
-          Proficient in developing complex frontend features such as dashboards,
-          dynamic tables, and reusable custom components. Skilled in code
-          stitching, debugging, and optimizing UI performance. Possess working
-          knowledge of React Native and a foundational understanding of backend
-          technologies including Node.js, Redis, and RabbitMQ, enabling eﬀective
-          frontend–backend collaboration.
+          Frontend Developer with 2+ years of experience crafting fast,
+          responsive interfaces in React.js and Next.js. Skilled in Redux state
+          management, reusable component design, dashboards, and dynamic data
+          tables. Comfortable debugging, optimizing performance, and working
+          closely with backend teams. Experienced in React Native through a
+          freelance mobile app project, with a foundation in Node.js.
         </div>
       </section>
     </>
