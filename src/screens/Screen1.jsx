@@ -39,7 +39,7 @@ const Screen1 = ({}) => {
               transition={{ delay: 0.2 }}
               className="text-[48px] md:text-[64px] leading-[1.1] font-extrabold tracking-tight"
             >
-              Software
+              Frontend
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -57,12 +57,11 @@ const Screen1 = ({}) => {
             transition={{ delay: 0.5 }}
             className={`text-justify md:text-base leading-relaxed ${darkMode ? "text-slate-300" : "text-gray-600"}`}
           >
-            I’m a software developer specializing in React.js and Next.js,
-            building responsive, scalable, and high-performance user
-            interfaces. I focus on creating maintainable architectures,
-            dynamic dashboards, and reusable components, with strong state
-            management using Redux and effective frontend–backend
-            collaboration.
+            I’m a frontend developer with 2+ years of experience building
+            fast, responsive interfaces with React.js and Next.js. I focus on
+            maintainable architecture, reusable components, dynamic
+            dashboards, and Redux state management, with a practical
+            foundation in Node.js and React Native.
           </motion.div>
         </div>
 

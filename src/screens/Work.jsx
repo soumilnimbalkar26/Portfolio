@@ -8,11 +8,18 @@ const Work = () => {
 
   const exp = [
     {
-      startDate: "DEC 2023",
-      endDate: "PRESENT",
+      startDate: "APR 2026",
+      endDate: "NOV 2026",
       title: "Frontend Developer",
-      company: "Lineup Technologies Pvt. Ltd.",
-      description: `Frontend Developer with experience in React.js and Next.js, building scalable, user-focused web applications. Developed reusable dashboards, dynamic tables, and custom components aligned with business needs. Integrated REST APIs and managed state using Redux. Improved performance and code quality through refactoring and debugging UI, API, and state issues. Collaborated with backend teams on data flow and API contracts. Also contributed to React Native mobile apps and worked in Agile environments using Git-based workflows.`,
+      company: "E-Nirmaan | Mumbai, India",
+      description: `Built an end-to-end insurance platform journey with authentication, OTP verification, and dynamic PDF generation. Developed a reporting platform from scratch in React.js, migrated legacy Laravel applications to React.js and Next.js, and improved frontend performance and maintainability. Also built HRMS workflows, reusable UI components, and centralized Redux state management while contributing to reviews, debugging, and feature planning.`,
+    },
+    {
+      startDate: "DEC 2023",
+      endDate: "APR 2026",
+      title: "Frontend Developer",
+      company: "LineupX | Mumbai, India",
+      description: `Developed React.js and Next.js features, dashboards, dynamic tables, and reusable input components. Integrated REST APIs with Redux, stitched new features into existing codebases, and resolved UI, API, and state issues. Refactored components for better performance and collaborated with backend developers on data flow and API contracts. Contributed to React Native functionality and Git-based Agile workflows.`,
     },
   ];
 

@@ -57,6 +57,18 @@ const Projects = () => {
       link: "https://password-generator-lake-sigma.vercel.app/",
       image: passwordGen,
     },
+    {
+      title: "Music Streaming Web Application",
+      date: "Personal Project",
+      description: "Full-stack music application with authentication, secure MP3 uploads, Supabase storage, MongoDB metadata, and React playback controls.",
+      image: todo,
+    },
+    {
+      title: "Full Stack Blogging Web Application",
+      date: "College Project",
+      description: "MERN blogging platform with authentication, role-based access, complete blog CRUD operations, and RESTful APIs.",
+      image: imageSearch,
+    },
   ];
 
   return (
@@ -112,11 +124,14 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  key={index}
-                  href={project?.link}
-                  target="_blank"
+                  key={index} 
+                  href={project?.link || "#projects"}
+                  target="_blank" 
                   rel="noopener noreferrer"
-                  className="group block"
+                  className={`group block ${!project?.link ? "cursor-default" : ""}`}
+                  onClick={(event) => {
+                    if (!project?.link) event.preventDefault();
+                  }}
                 >
                   <div
                     className={`overflow-hidden rounded-[16px] mb-3 shadow-lg transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl ${
