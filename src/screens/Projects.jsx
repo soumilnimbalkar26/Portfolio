@@ -31,6 +31,18 @@ const Projects = () => {
       link:"https://password-generator-lake-sigma.vercel.app/",
       image:passwordGen
     },
+    {
+      title: "Music Streaming Web Application",
+      date: "Personal Project",
+      description: "Full-stack music application with authentication, secure MP3 uploads, Supabase storage, MongoDB metadata, and React playback controls.",
+      image: todo,
+    },
+    {
+      title: "Full Stack Blogging Web Application",
+      date: "College Project",
+      description: "MERN blogging platform with authentication, role-based access, complete blog CRUD operations, and RESTful APIs.",
+      image: imageSearch,
+    },
   ];
 
   return (
@@ -72,15 +84,18 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 w-full mt-2 overflow-y-auto max-h-[50vh] pr-2 custom-scrollbar">
             {projects?.map((project, index) => {
               return (
-                <motion.a 
+                <motion.a
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   key={index} 
-                  href={project?.link} 
+                  href={project?.link || "#projects"}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group block"
+                  className={`group block ${!project?.link ? "cursor-default" : ""}`}
+                  onClick={(event) => {
+                    if (!project?.link) event.preventDefault();
+                  }}
                 >
                   <div className={`overflow-hidden rounded-[16px] mb-3 shadow-lg transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl ${
                     darkMode ? "bg-slate-800/60 border border-slate-700" : "bg-white border border-gray-100"

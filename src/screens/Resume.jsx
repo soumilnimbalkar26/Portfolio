@@ -37,8 +37,22 @@ const Resume = () => {
         </h1>
         
         <p className={`text-base md:text-xl mb-8 max-w-2xl leading-relaxed ${darkMode ? "text-slate-300" : "text-gray-600"}`}>
-          Learn more about my professional journey, technical expertise, and the value I can bring to your team. Dive deep into my academic and work history.
+          Frontend developer with 2+ years of experience in React.js and Next.js, building responsive applications, dashboards, dynamic tables, and reusable UI systems.
         </p>
+
+        <div className={`w-full max-w-2xl mb-8 text-left border-t pt-6 ${darkMode ? "border-slate-700" : "border-gray-200"}`}>
+          <h2 className="text-lg font-bold mb-3">Education</h2>
+          <div className={`space-y-3 text-sm md:text-base ${darkMode ? "text-slate-300" : "text-gray-600"}`}>
+            <p>
+              <span className="font-semibold">Bachelor&apos;s, Computer Engineering</span>
+              <br />Dilkap Research Institute of Engineering and Management Studies · Jan 2020 - Jul 2023 · GPA: 8.63
+            </p>
+            <p>
+              <span className="font-semibold">Diploma in Computer Engineering</span>
+              <br />Kala Vidyamandir Institute of Technology (Polytechnic) · Aug 2016 - May 2019
+            </p>
+          </div>
+        </div>
         
         <div className="flex flex-col sm:flex-row gap-4 relative z-10">
           <motion.a
